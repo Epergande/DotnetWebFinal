@@ -1,0 +1,25 @@
+@model IEnumerable<Discount>
+
+<table class="table table-hover ">
+  <thead>
+    <tr>
+      <th scope="col">Discount title</th>
+      <th scope="col" class="text-end">Percent</th>
+      <th scope="col" class="text-end">Start date</th>
+      <th scope="col" class="text-end">End date</th>
+
+    </tr>
+</thead>
+<tbody>
+  @foreach (Discount p in Model)
+  {
+    <tr>
+      <td>@p.Title</td>
+      <td class="text-end">@string.Format("{0:P}", p.DiscountPercent)</td>
+      <td class="text-end">@p.StartTime.ToString("MMMM dd, yyyy")</td>
+      <td class="text-end">@p.EndTime.ToString("MMMM dd, yyyy")</td>
+    </tr>
+  }
+  </tbody>
+</table>
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Go Home</a>
