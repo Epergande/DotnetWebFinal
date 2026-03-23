@@ -1,0 +1,26 @@
+@model IEnumerable<Customer>
+
+<table class="table table-hover m-0-auto">
+<thead>
+  <tr>
+    <th> ID</th>
+    <th>Company Name</th>
+    <th>location</th>
+    <th>Phone</th>
+  
+  </tr>
+
+</thead>
+<tbody>
+  @foreach (Customer p in Model)
+  {
+    <tr>
+      <td>@p.CustomerID</td>
+      <td>@p.CompanyName</td>
+      <td >@p.City , @p.Country</td>
+      <td>@p.Phone</td>
+    </tr>
+  }
+  </tbody>
+</table>
+<a asp-controller="Customer" asp-action="Regester" class="btn btn-primary">Add Another Customer</a>
