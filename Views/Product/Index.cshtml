@@ -1,4 +1,11 @@
 <table class="table table-hover">
+  @if (User?.Identity?.IsAuthenticated ?? true)
+{
+  if (User.IsInRole("employee"))
+  {
+    <p> im rly hungry</p>
+  }
+}
   <thead>
     <tr>
       <th scope="col">
