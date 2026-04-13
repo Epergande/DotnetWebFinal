@@ -1,0 +1,22 @@
+{
+    "Data": {
+      "Northwind": {
+        "ConnectionString": "Server=bitsql.wctc.edu;Database=Northwind_xx_yyy;User ID=000;Password=000"
+      },
+      "AppIdentity": {
+        "ConnectionString": "Server=bitsql.wctc.edu;Database=Identity_xx_yyy;User ID=000;Password=000"
+      }
+    },
+    "_comment": {
+        "##": "last 2 digits of CRN",
+        "XXX": "your initials"
+    },
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Warning",
+        "Microsoft.Hosting.Lifetime": "Information"
+      }
+    },
+    "AllowedHosts": "*"
+}
