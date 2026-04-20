@@ -10,5 +10,7 @@ public class ProductController : Controller
   public IActionResult Category() => View(_dataContext.Categories.OrderBy(c => c.CategoryName));
   public IActionResult Index(int id) => View(_dataContext.Products.Where(p => p.CategoryId == id && p.Discontinued == false).OrderBy(p => p.ProductName));
 public IActionResult Discount(int id) => View(_dataContext.Discounts);
+
+public IActionResult AddDiscount() => View();
 }
 // .Where(p => p.EndTime !< thisDay)
