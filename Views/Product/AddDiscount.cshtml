@@ -1,14 +1,15 @@
+@model Discount
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Add Discount</h2>
-                    <form method="POST">
+                    <form method="POST" asp-action="AddDiscount">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Discount Title</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <label asp-for="@Model.Title" class="label">Discount Title</label>
+                                    <input asp-for="@Model.Title" class="input--style-4" type="text" name="first_name">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -21,18 +22,20 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Start Date</label>
+                                    <label asp-for="@Model.StartTime"class="label">Start Date</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input asp-for="@Model.StartTime"class="input--style-4 js-datepicker" type="date" name="birthday"
+                                        ">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">End Date</label>
+                                    <label asp-for="@Model.EndTime"classclass="label">End Date</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="end_date">
+                                        <input asp-for="@Model.EndTime"class="input--style-4 js-datepicker" type="date" name="end_date"
+                                         ">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -51,7 +54,7 @@
                      
                    
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <button  class="btn btn--radius-2 btn--blue" type="submit" >Submit</button>
                         </div>
                     </form>
                 </div>
