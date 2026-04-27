@@ -9,7 +9,7 @@ public class Discount
   [Required]
   public DateTime EndTime { get; set; }
   public int ProductId { get; set; }
-  [Column(TypeName = "decimal(5,2)")]
+  [Column(TypeName = "decimal(4,4)")]
   public decimal DiscountPercent { get; set; }
   [Required]
   public string Title { get; set; }
