@@ -1,3 +1,5 @@
+@model IEnumerable<Discount>
+
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
@@ -11,6 +13,8 @@
                                     <input class="input--style-4" type="text" name="first_name">
                                 </div>
                             </div>
+                
+                         
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Discount Percent</label>
@@ -23,7 +27,7 @@
                                 <div class="input-group">
                                     <label class="label">Start Date</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" name="start_date">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -48,11 +52,20 @@
                             </div>
                          
                         </div>
-                     
-                   
+                         <script>
+                            function RandomCode() {
+        const code = Math.random() * 10000 | 0; 
+        document.getElementById("randomCode").textContent = code;
+    }
+                    </script>
+                   <div>
+                            <button class="btn btn--radius-2 btn--main" type="button" onclick="RandomCode()">Generate Code</button>
+                            <div>Random Code: <span id="randomCode" name="Code"></span></div>
+                   </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>
+                        
                     </form>
                 </div>
             </div>

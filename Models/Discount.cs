@@ -12,4 +12,5 @@ public class Discount
   public string Description { get; set; }
 
   public Product Product { get; set; }
+
 }

@@ -13,4 +13,16 @@ public class ProductController : Controller
 public IActionResult Discount(int id) => View(_dataContext.Discounts);
 
 public IActionResult AddDiscount() => View();
+
+[HttpPost]
+public IActionResult DeleteDiscount(int id)
+{
+    var discount = _dataContext.Discounts.Find(id);
+    if (discount != null)
+    {
+        _dataContext.DeleteDiscount(discount);
+        _dataContext.SaveChanges();
+    }
+    return RedirectToAction("Discount");
+}
 }
