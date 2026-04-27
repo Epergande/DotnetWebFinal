@@ -43,6 +43,8 @@ public class DataContext : DbContext
   public void EditDiscount(Discount discount)
   {
     var discountToUpdate = Discounts.FirstOrDefault(c => c.DiscountId == discount.DiscountId);
+    Console.WriteLine(discount.Title + " " + discountToUpdate.Title);
+    Console.WriteLine(discount.DiscountId + " " + discountToUpdate.DiscountId);
     discountToUpdate.Code = discount.Code;
     discountToUpdate.StartTime = discount.StartTime;
     discountToUpdate.EndTime = discount.EndTime;
@@ -51,6 +53,6 @@ public class DataContext : DbContext
     discountToUpdate.Title = discount.Title;
     discountToUpdate.Description = discount.Description;
     discountToUpdate.Product = discount.Product;
-    
+    this.SaveChanges();
   }
 }

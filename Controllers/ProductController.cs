@@ -18,7 +18,7 @@ public class ProductController : Controller
   [Authorize(Roles = "employee")]
   public IActionResult AddDiscount() => View();
 
- 
+
   [Authorize(Roles = "employee")]
   [HttpPost]
   [ValidateAntiForgeryToken]
@@ -38,4 +38,18 @@ public class ProductController : Controller
     }
     return View();
   }
+  
+[Authorize(Roles = "employee")]
+  public IActionResult EditDiscount() => View();
+
+[Authorize(Roles = "employee")]
+  [HttpPost]
+  [ValidateAntiForgeryToken]
+  public IActionResult EditDiscount(Discount model, int id)
+  {
+    model.DiscountId = id;
+    _dataContext.EditDiscount(model);
+    return RedirectToAction("Discount");
+  }
+  
 }
