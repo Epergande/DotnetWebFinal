@@ -28,7 +28,11 @@ public class DataContext : DbContext
   }
    public void AddDiscount(Discount discount)
   {
+    discount.Product = Products.FirstOrDefault(p => p.ProductId == discount.ProductId);
+    discount.DiscountPercent = Math.Round(discount.DiscountPercent, 2);
+    Console.WriteLine(discount.DiscountPercent);
     this.Add(discount);
+    
     this.SaveChanges();
   }
   public void DeleteDiscount(Discount discount)

@@ -17,6 +17,8 @@ public class ProductController : Controller
 
   [Authorize(Roles = "employee")]
   public IActionResult AddDiscount() => View();
+
+ 
   [Authorize(Roles = "employee")]
   [HttpPost]
   [ValidateAntiForgeryToken]
