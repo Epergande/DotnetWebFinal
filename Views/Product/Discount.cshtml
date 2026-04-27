@@ -17,7 +17,6 @@
   {
     <tr>
       <td>@p.Title</td>
-      <td> <a asp-controller="Product" asp-action="EditDiscount" asp-route-id="@p.DiscountId" >Edit</a> </td>
       <td class="text-end">@string.Format("{0:P}", p.DiscountPercent)</td>
       <td class="text-end">@p.StartTime.ToString("MMMM dd, yyyy")</td>
       <td class="text-end">@p.EndTime.ToString("MMMM dd, yyyy")</td>
