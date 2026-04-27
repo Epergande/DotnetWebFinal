@@ -17,4 +17,5 @@ public class Discount
 
 
   public Product Product { get; set; }
+
 }

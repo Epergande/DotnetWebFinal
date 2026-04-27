@@ -5,16 +5,17 @@
             <div class="card card-4">
                 <div class="card-body">
                     
-                    <h2 class="title">Add Discount</h2>
-                    <form  method="POST">
+                    <form method="POST">
                         <div asp-validation-summary="All"></div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label asp-for="@Model.Title" class="label">Discount Title</label>
-                                    <input asp-for="@Model.Title" class="input--style-4" type="text" >
+                                    <input asp-for="@Model.Title" class="input--style-4" type="text">
                                 </div>
                             </div>
+                
+                         
                             <div class="col-2">
                                 <div class="input-group">
                                     <label asp-for="@Model.DiscountPercent" class="label">Discount Percent</label>
@@ -25,20 +26,19 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label asp-for="@Model.StartTime"class="label">Start Date</label>
+                                    <label asp-for="@Model.StartTime" class="label">Start Date</label>
                                     <div class="input-group-icon">
-                                        <input asp-for="@Model.StartTime"class="input--style-4 js-datepicker" type="date" 
-                                        ">
+                                        <input asp-for="@Model.StartTime" class="input--style-4 js-datepicker" type="date">
+                                                           
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label asp-for="@Model.EndTime"classclass="label">End Date</label>
+                                    <label asp-for="@Model.EndTime" class="label">End Date</label>
                                     <div class="input-group-icon">
-                                        <input asp-for="@Model.EndTime"class="input--style-4 js-datepicker" type="date" 
-                                         ">
+                                        <input asp-for="@Model.EndTime" class="input--style-4 js-datepicker" type="date">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -54,11 +54,20 @@
                             </div>
                          
                         </div>
-                     
-                   
+                         <script>
+                            function RandomCode() {
+        const code = Math.random() * 10000 | 0; 
+        document.getElementById("randomCode").textContent = code;
+    }
+                    </script>
+                   <div>
+                            <button class="btn btn--radius-2 btn--main" type="button" onclick="RandomCode()">Generate Code</button>
+                            <div>Random Code: <span id="randomCode" name="Code" asp-for="@Model.Code"></span></div>
+                   </div>
                         <div class="p-t-15">
                             <button  class="btn btn--radius-2 btn--blue" type="submit" >Submit</button>
                         </div>
+                        
                     </form>
                     
                 </div>
