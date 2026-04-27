@@ -38,4 +38,18 @@ public class ProductController : Controller
     }
     return View();
   }
+
+  // [Authorize(Roles = "employee")]
+  [HttpPost]
+
+  public IActionResult DeleteDiscount(int id)
+  {
+    var discount = _dataContext.Discounts.Find(id);
+    if (discount != null)
+    {
+      _dataContext.DeleteDiscount(discount);
+      _dataContext.SaveChanges();
+    }
+    return RedirectToAction("Discount");
+  }
 }
