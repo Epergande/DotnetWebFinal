@@ -1,8 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.VisualBasic;
+using Microsoft.EntityFrameworkCore.Query.Internal;
+
 
 public class ProductController : Controller
 {
+  Random rand = new Random();
   // this controller depends on the NorthwindRepository
   private DataContext _dataContext;
   public ProductController(DataContext db) => _dataContext = db;
@@ -32,8 +36,9 @@ public class ProductController : Controller
       }
       else
       {
+        model.Code = rand.Next(1000000);
         _dataContext.AddDiscount(model);
-        return RedirectToAction("Index");
+        return RedirectToAction("Discount");
       }
     }
     return View();

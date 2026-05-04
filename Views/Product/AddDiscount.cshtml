@@ -50,17 +50,13 @@
                         <div class="col-2">
                             <div class="input-group">
                                 <label asp-for="@Model.ProductId" class="label">Product ID</label>
-                                <input asp-for="@Model.ProductId" class="input--style-4" type="text">
+                                <input asp-for="@Model.ProductId" class="input--style-4" type="number">
                             </div>
                         </div>
 
                     </div>
 
-                    <div>
-                        <button class="btn btn--radius-2 btn--main" type="button" onclick="RandomCode()">Generate
-                            Code</button>
-                        <div>Random Code: <span id="randomCode" name="Code" ></span></div>
-                    </div>
+                    
 
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
@@ -75,7 +71,7 @@
 <script> 
     function RandomCode() {
         const code = Math.random() * 10000 | 0;
-        document.getElementById("randomCode").textContent = code;
+        document.getElementById("randomCode").text = code;
     }
 </script>
 

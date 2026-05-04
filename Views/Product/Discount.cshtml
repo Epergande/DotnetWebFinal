@@ -5,8 +5,9 @@
   <thead>
     <tr>
       <th scope="col">Discount title</th>
-      <th scope="col">edit</th>
+      
       <th scope="col" class="text-end">Percent</th>
+      <th scope="col" class="text-end">Discount Code</th>
       <th scope="col" class="text-end">Start date</th>
       <th scope="col" class="text-end">End date</th>
 
@@ -18,6 +19,7 @@
     <tr>
       <td>@p.Title</td>
       <td class="text-end">@string.Format("{0:P}", p.DiscountPercent)</td>
+      <td class="text-end">@p.Code</td>
       <td class="text-end">@p.StartTime.ToString("MMMM dd, yyyy")</td>
       <td class="text-end">@p.EndTime.ToString("MMMM dd, yyyy")</td>
       <td>
