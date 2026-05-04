@@ -19,11 +19,11 @@ public class ProductController : Controller
   public IActionResult Discount(int id) => View(_dataContext.Discounts);
 
 
-  [Authorize(Roles = "employee")]
+  [Authorize(Roles = "admin , blogs-moderate")]
   public IActionResult AddDiscount() => View();
 
 
-  [Authorize(Roles = "employee")]
+  [Authorize(Roles = "admin, blogs-moderate")]
   [HttpPost]
   [ValidateAntiForgeryToken]
   public IActionResult AddDiscount(Discount model)
@@ -44,21 +44,22 @@ public class ProductController : Controller
     return View();
   }
   
-[Authorize(Roles = "employee")]
+[Authorize(Roles = "admin")]
   public IActionResult EditDiscount() => View();
 
-[Authorize(Roles = "employee")]
+[Authorize(Roles = "admin")]
   [HttpPost]
   [ValidateAntiForgeryToken]
   public IActionResult EditDiscount(Discount model, int id)
   {
     model.DiscountId = id;
+        model.Code = rand.Next(1000000);
     _dataContext.EditDiscount(model);
     return RedirectToAction("Discount");
   }
   
 
-  // [Authorize(Roles = "employee")]
+  [Authorize(Roles = "admin")]
   [HttpPost]
 
   public IActionResult DeleteDiscount(int id)

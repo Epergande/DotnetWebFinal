@@ -1,10 +1,9 @@
 <table class="table table-hover">
   @if (User?.Identity?.IsAuthenticated ?? true)
 {
-  if (User.IsInRole("employee"))
-  {
-    <p> im rly hungry</p>
-  }
+  
+    <a asp-controller="Product" asp-action="Discount" class="btn btn-primary mb-3">View Discounts</a>
+  
 }
   <thead>
     <tr>
